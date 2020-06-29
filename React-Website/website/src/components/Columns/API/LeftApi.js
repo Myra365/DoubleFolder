@@ -26,8 +26,8 @@ class LeftApi extends React.Component{
         else{
             return (
                 <div>
-                    <h2 className = "tc bb bw2">Wall of Encouragement</h2>
-                    <h4 className = "tc">{this.state.items}</h4>
+                    <h3 className = "tc bb bw2">Wall of Encouragement</h3>
+                    <p className = "tc f5 f4-m f3-l lh-copy measure mt0">{this.state.items}</p>
                     
                 </div>
             )

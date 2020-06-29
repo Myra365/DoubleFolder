@@ -81,7 +81,9 @@ body{
     max-width: 2.3rem;
     height: 1rem;
 }
-
+.f3-l{
+    font-size: 1rem;
+} 
 @media only screen and (max-width:769px){
     .col{
         display: none;

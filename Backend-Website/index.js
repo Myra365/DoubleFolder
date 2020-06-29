@@ -7,7 +7,8 @@ const app = express();
 const bcrypt = require('bcrypt');
 const signin = require('./controller/Signin/Signin');
 const storePass = require('./controller/PScreate/Store')
-const updateScore = require('./controller/Score/score')
+const updateScore = require('./controller/Score/score');
+const { getScore } = require('./controller/Score/score');
 
 //db client
 const db = knex({
@@ -27,6 +28,9 @@ app.use(bodyParser.json());
 app.post('/signin', (req,res) => signin.handleSignin(req,res,db,bcrypt));
 //update password
 app.put('/store', (req,res) => storePass.storeBcrypt(req,res,db,bcrypt));
+
+//get score
+app.get('/updateScore', (req,res) => updateScore.getScore(req,res,db));
 //update score
 app.put('/updateScore', (req,res) => updateScore.updateScore(req,res,db,bcrypt));
 

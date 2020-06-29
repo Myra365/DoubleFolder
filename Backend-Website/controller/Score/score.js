@@ -10,7 +10,22 @@ const updateScore = (req,res,db) => {
   
   }
 
+  const getScore = (req, res, db) =>{
+    db.select('username','score').from('student')
+    .orderBy('score','desc')
+    .then(data => {
+      let newMap = data.map(item => {
+        return {name: item.username, score: item.score}
+      })
+      console.log('ners', newMap[0])
+      console.log('new',newMap)
+      res.json(newMap)
+     
+    })
+  }
+
   module.exports = {
-      updateScore: updateScore
+      updateScore: updateScore,
+      getScore: getScore
 
   }

@@ -10,8 +10,8 @@ class Complete extends React.Component{
     render(){
         
         return(
-            <div>
-                <h1>Submission Complete</h1>
+            <div className = "dt mw6 center pt0 pv5-m bg-light-green dib br3 pa3 ma2 grow shadow-5">
+                <h1 className = "tc" >Submission Complete</h1>
             </div>
         )
     }
